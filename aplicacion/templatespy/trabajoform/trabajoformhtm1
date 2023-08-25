@@ -1,0 +1,26 @@
+% extiende 'aplicacion/base.html' %}
+
+{% título del bloque %}
+    < div  class =" centro de texto mb-5 " >
+        < h1  class =" display-5 fw-bolder mb-0 " > < span  class =" text-gradient d-inline " > Registro de Trabajos </ span > </ h1 >
+    </div> _ _                              
+{% título del bloque final %}
+
+{% bloquear informacion %}
+    < formulario  acción ="" método =" POST " >
+
+            {% csrf_token %}
+
+
+            {{formulario.as_p}}              
+
+
+
+
+            < div  class =" d-grid " >
+                < botón  clase =" btn btn-primary btn-lg " id =" enviarBotón " tipo =" enviar " > Enviar </ botón >
+        </div> _ _
+    </ formulario >      
+
+
+{% información del bloque final %}
