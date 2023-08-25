@@ -1,0 +1,42 @@
+{% extiende 'aplicacion/base.html' %}
+
+{% título del bloque %}
+    < div  class =" centro de texto mb-5 " >
+        < h1  class =" display-5 fw-bolder mb-0 " > < span  class =" text-gradient d-inline " > {{curriculum.apellido}}  {{curriculum.nombre}} </ span > </h1> _ _
+    </div> _ _                              
+{% título del bloque final %}
+
+{% bloquear informacion %}
+    {% si plan de estudios %}
+    <!-- SE SEPARA CADA OBJETO DE "CURRICULUM PARA MOSTRAR LA INFORMACION DOND ES DEBIDO"-->
+        < h2  class =" text-secundary fw-bolder mb-4 " > Presentación </ h2 >
+        < div  class =" tarjeta sombra borde-0 redondeado-4 mb-5 " >
+            < div  class =" cuerpo de tarjeta p-5 " >
+                < div  class =" fila align-items-center gx-5 " >
+
+                    < div  class =" text-center " > < p  class =" fs-5 " > {{curriculum.presentacion}} </ p > </ div >
+                </div> _ _
+            </div> _ _
+        </div> _ _
+        < h2  class =" text-secundary fw-bolder mb-4 " > Experiencias </ h2 >
+        < div  class =" tarjeta sombra borde-0 redondeado-4 mb-5 " >
+            < div  class =" cuerpo de tarjeta p-5 " >
+                < div  class =" fila align-items-center gx-5 " >
+
+                    < div  class =" text-center " > < p  class =" fs-5 " > {{curriculum.experiencia}} </ p > </ div >
+                </div> _ _
+            </div> _ _
+        </div> _ _
+        < h2  class =" text-secundaria fw-bolder mb-4 " > Estudios </ h2 >
+        < div  class =" tarjeta sombra borde-0 redondeado-4 mb-5 " >
+            < div  class =" cuerpo de tarjeta p-5 " >
+                < div  class =" fila align-items-center gx-5 " >
+
+                    < div  class = " text-center " > < p class  = " fs - 5 " > {{curriculum.estudios}} </p> </div>
+                </div> _ _
+            </div> _ _
+        </div> _ _
+    {% demás %}
+        < p > No se ha encontrado a nadie con ese nombre. </ p >
+    {% terminara si %}
+{% información del bloque final %}
