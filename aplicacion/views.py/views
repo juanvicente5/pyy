@@ -1,0 +1,130 @@
+de  Django . atajos  importar  render
+de . modelos  importan  Curriculum , Empleos , Empleador
+de  Django . http  importar  HttpResponse
+de . importar formularios  EmpleadoForm , TrabajoForm , EmpleadorForm 
+desde  la plantilla de importación de Django  
+
+
+registro  =  plantilla . Biblioteca ()
+
+def  estilizar_campo ( campo , clase_css ):
+    volver  campo . as_widget ( atributos = { 'clase' : clase_css })
+
+def  inicio ( solicitud ):
+    devolver  render ( solicitud , "aplicacion/inicio.html" )
+#LOS TRES MODELOS TRABAJAN DE LA MISMA MANERA
+################################# EMPLEADO ################ ###############################
+#LLAMO LA CLASE PARA IMPORTAR TODOS LOS OBJETOS EN LA VARIABLE
+#ADEMAS DE HACER EL FILTRADO POR 'NOMBRE' O POR LO QUE SE QUIERA BUSCAR, EN EL CASO DE EMPLEOS ES POR 'CARGO'
+#ASI CON UNA FUNCION OBTENGO LOS DATOS DE LA CLASE Y RENDERIZAR TAMBIEN LA VARIABLE PARA FILTRAR LA BUSQUEDA
+def  lista_empleados ( solicitud ):
+    currículos  =  Plan de estudios . objetos . todos ()                          
+
+    nombre_buscado  =  solicitud . OBTENER . obtener ( 'nombre' )
+    si  nombre_buscado :
+        currículos  =  currículos . filtrar ( nombre__icontains = nombre_buscado )
+
+    return  render ( solicitud , 'aplicacion/lista_empleados.html' , { 'curriculums' : curriculums })
+#PARA OBTENER LA ID DEL OBJETO Y RENDERIZARLO EN LA URL DEL DETALLE
+def  detalle_empleado ( solicitud , curriculum_id ):
+    plan de estudios  =  Plan de estudios . objetos . obtener ( pk = curriculum_id )
+    return  render ( solicitud , 'aplicacion/detalle_empleado.html' , { 'curriculum' : curriculum })
+# SE LLAMA A LA CLASE DEL FORM PARA RENDERIZARLA EN EL HTML DE IDA Y VUELTA,
+# COMPRUEVA SI LOS DATOS SON VALIDOS Y LOS GUARDA EN LA BASE DE DATOS AL IGUALARLO CON EL OBJETO DESEADO
+def  empleadoForm ( solicitud ):
+    Si  lo solicita . método  ==  'POST' :
+        miForm  =  EmpleadoForm ( solicitud . POST )
+        si  miForma . es_válido ():
+            empleado_nombre  =  miForm . datos_limpiados . obtener ( 'nombre' )
+            empleado_apellido  =  miForm . datos_limpiados . obtener ( 'apellido' )
+            empleado_presentacion  =  miForm . datos_limpiados . obtener ( 'presentación' )
+            empleado_experiencia  =  miForma . datos_limpiados . obtener ( 'experiencia' )
+            empleado_estudios  =  miForm . datos_limpiados . obtener ( 'estudios' )
+            empleado  =  Curriculum ( nombre = empleado_nombre ,
+                                  apellido = empleado_apellido ,
+                                  presentacion = empleado_presentacion ,
+                                  experiencia = empleado_experiencia ,
+                                  estudios = empleado_estudios ,
+                                  )
+            empleado . guardar ()
+            devolver  render ( solicitud , "aplicacion/base.html" )
+
+    más :
+        miForm  =  Formulario Empleado ()
+
+    return  render ( solicitud , "aplicacion/empleadoForm.html" , { "formulario" : miForm })
+
+
+
+################################## TRABAJOS ################ ###############################
+
+def  lista_empleos ( solicitud ):
+    trabajos  =  Empleos . objetos . todos ()
+
+    trabajo_buscado  =  solicitud . OBTENER . obtener ( 'carga' )
+    si  trabajo_buscado :
+        trabajos  =  trabajos . filtro ( cargo__icontains = trabajo_buscado )
+    return  render ( solicitud , "aplicacion/lista_empleos.html" , { 'trabajos' : trabajos })
+
+def  detalle_empleo ( solicitud , trabajo_id ):
+    trabajo  =  Empleos . objetos . obtener ( pk = trabajo_id )
+    return  render ( request , 'aplicacion/detalle_empleo.html' , { 'trabajo' : trabajo })
+
+
+def  trabajoForma ( solicitud ):
+    Si  lo solicita . método  ==  'POST' :
+        miForm  =  TrabajoForm ( solicitud . POST )
+        si  miForma . es_válido ():
+            trabajo_cargo  =  miForm . datos_limpiados . obtener ( 'carga' )
+            trabajo_detalles  =  miForm . datos_limpiados . obtener ( 'detalles' )
+            trabajo_ubicacion  =  miForm . datos_limpiados . get ( 'ubicación' )
+            trabajo_sueldo  =  miForma . datos_limpiados . obtener ( 'sueldo' )
+            trabajo  =  Empleos ( cargo = trabajo_cargo ,
+                                  detalles = trabajo_detalles ,
+                                  ubicacion = trabajo_ubicacion ,
+                                  sueldo = trabajo_sueldo ,
+                                  )
+            trabajo . guardar ()
+            devolver  render ( solicitud , "aplicacion/base.html" )
+
+    más :
+        miForm  =  FormularioTrabajo ()
+
+    return  render ( solicitud , "aplicacion/trabajoForm.html" , { "formulario" : miForm })
+
+################################## EMPLEADOR ################ ###############################
+
+def  lista_empleadores ( solicitud ):
+    trabajadores  =  Empleador . objetos . todos ()
+
+    empleadores_buscado  =  solicitud . OBTENER . obtener ( 'nombre' )
+    si  empleadores_buscado :
+        permisos  =  permitidos . filtro ( nombre__icontains = empleadores_buscado )
+    return  render ( solicitud , "aplicacion/lista_empleadores.html" , { 'empleadores' : trabajadores })
+
+def  detalle_empleador ( solicitud , empleador_id ):
+    empleadores  =  Empleador . objetos . obtener ( pk = empleador_id )
+    return  render ( solicitud , 'aplicacion/detalle_empleador.html' , { 'empleador' : empleadores })
+
+def  formulario empleadores ( solicitud ):
+    Si  lo solicita . método  ==  'POST' :
+        miForm  =  EmpleadorForm ( solicitud . POST )
+        si  miForma . es_válido ():
+            empleador_nombre  =  miFormulario . datos_limpiados . obtener ( 'nombre' )
+            empleadores_apellido  =  miForm . datos_limpiados . obtener ( 'apellido' )
+            empleadores_edad  =  miFormulario . datos_limpiados . obtener ( 'edad' )
+            empleadores_profesion  =  miFormulario . datos_limpiados . obtener ( 'profesión' )
+            empleadores_nombreEmpresa  =  miFormulario . datos_limpiados . get ( 'nombreEmpresa' )
+            empleadores  =  Empleador ( nombre = empleador_nombre ,
+                                  apellido = empleadores_apellido ,
+                                  edad = empleadores_edad ,
+                                  profesión = empleadores_profesion ,
+                                  nombreEmpresa = empleador_nombreEmpresa
+                                  )
+            empleadores . guardar ()
+            devolver  render ( solicitud , "aplicacion/inicio.html" )
+
+    más :
+        miForm  =  EmpleadorForm ()
+
+    return  render ( solicitud , "aplicacion/empleadorForm.html" , { "formulario" : miForm })
