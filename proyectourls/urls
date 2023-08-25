@@ -1,0 +1,9 @@
+@@ -0,0 +1,8 @@
+
+de  Django . Contribuir  administrador de importación 
+de  Django . ruta de importación de URL  , incluir 
+
+patrones de URL  = [
+    ruta ( 'admin/' , admin . sitio . URL ),
+    ruta ( '' , incluir ( 'aplicacion.urls' )),
+]
