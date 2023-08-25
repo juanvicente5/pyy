@@ -1,0 +1,102 @@
+<!DOCTYPEhtml >
+< html  lang =" es " >
+    < cabeza >
+        {% carga estática %}
+        < meta  conjunto de caracteres =" utf-8 " />
+        < meta  nombre =" ventana gráfica " contenido =" ancho = ancho del dispositivo, escala inicial = 1, reducción para ajustar = no " />
+        < nombre meta  =" descripción " contenido ="" />
+        < meta  nombre =" autor " contenido =""/>
+        < título > TrabajoYa </ título >
+        <!-- Favicon-->
+        < enlace  rel =" icono " tipo =" imagen/x-icon " href =" activos/favicon.ico " />
+        <!-- Fuente personalizada de Google-->
+        < enlace  rel =" preconexión " href =" https://fonts.googleapis.com " />
+        < enlace  rel =" preconexión " href =" https://fonts.gstatic.com " crossorigin />
+        < enlace  href =" https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap " rel =" hoja de estilo " />
+        <!-- Iconos de arranque-->
+        < enlace  href =" https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css " rel =" hoja de estilo " />
+        < enlace  href =" https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css " rel =" hoja de estilo " />
+
+        <!-- Tema principal CSS (incluye Bootstrap)-->
+        < enlace  href =" {% static 'aplicacion/css/styles.css' %} " rel =" hoja de estilo " />
+    </cabeza> _ _
+    < body  class =" d-flex flex-columna h-100 bg-light " >
+        < clase principal  =" flex-shrink-0 " >
+            <!-- Navegación-->
+            < clase de navegación  =" barra de navegación barra de navegación-expandir-lg barra de navegación-luz bg-blanco py-3 " >
+                < div  clase =" contenedor px-5 " >
+                    <!--<a class="navbar-brand" href="home.html"><span class="fw-bolder text-primary">TrabajoYa</span></a>-->
+                    < a  class =" navbar-brand " href =" /inicio/ " id =" enlace-inicio " > < span  class =" fw-bolder text-primary " > TrabajoYa </ span > </ a >
+                    < botón  clase =" navbar-toggler " tipo =" botón " data-bs-toggle =" colapsar " data-bs-target =" #navbarSupportedContent " aria-controls =" navbarSupportedContent " aria-expanded =" false " aria-label =" Alternar navegación " > < abarcan  clase =" navbar-toggler-icon " > </ span > </ <ai=42>botón >
+                    < div  class =" contraer barra de navegación-collapse " id =" navbarSupportedContent " >
+                        < ul  class =" navbar-nav ms-auto mb-2 mb-lg-0 pequeño fw-bolder " >
+
+
+                           < li  class =" nav-item " > < a  class =" nav-link " href =" /lista_empleos/ " id =" enlace-empleos " > Empleos </ a > </ li >
+                           < li  class =" nav-item " > < a  class =" nav-link " href =" /lista_empleadores/ " id =" enlace-empleadores " > Empleadores </ a > </ li >
+                            < li  class =" nav-item " > < a  class =" nav-link " href =" /lista_empleados/ " id =" enlace-empleados " > Empleados </ a > </ li >
+
+                        </ul> _ _
+                    </div> _ _
+                </div> _ _
+            </nav> _ _
+            <!-- Contenido de la página-->
+            < div  class =" contenedor px-5 my-5 " >
+                {% título del bloque %}
+
+              {% comentario %}
+                sección para agregar el título a la página
+              {% comentario final %}
+
+                {% título del bloque final %}
+
+                < div  class =" fila gx-5 justify-content-center " >
+                    < div  class =" col-lg-11 col-xl-9 col-xxl-8 " >
+                        <!-- Sección Experiencia-->
+                        < sección >
+                            {% bloquear filtro %}
+                             {% comentario %}
+                                sección para el buscador por filtro
+                             {% comentario final %}
+                            {% filtro de bloque final %}
+
+
+                            {% bloquear informacion %}
+                            {% comentario %}
+                            sección para toda la información de las distintas paginas
+                            {% comentario final %}       
+                            {% información del bloque final %}     
+
+                        <!-- Divisor-->
+                        < div  clase =" pb-5 " > </ div >
+                    </div> _ _
+                </div> _ _
+            </div> _ _
+        </principal> _ _
+
+        {% bloque final %}
+
+        {% bloque final %}
+
+
+        <!-- Pie de página-->
+        < pie de página  =" bg-blanco py-4 mt-auto " >
+            < div  clase =" contenedor px-5 " >
+                < div  class =" fila align-items-center justificar-content-between flex-column flex-sm-row " >
+                    < div  class =" col-auto " > < div  class =" pequeño m-0 " > Copyright © Tu sitio web 2023 </ div > </ div >
+                    < div  clase =" col-auto " >
+                        < a  class =" small " href =" #! " > Privacidad </ a >
+                        < abarcan  clase =" mx-1 " > · </ lapso >
+                        < a  class =" small " href =" #! " > Términos </ a >
+                        < abarcan  clase =" mx-1 " > · </ lapso >
+                        < a  class =" small " href =" #! " > Contacto </ a >
+                    </div> _ _
+                </div> _ _
+            </div> _ _
+        </ pie de página >
+        <!-- Núcleo de arranque JS-->
+        < script  src =" https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js " > </ script >
+        <!-- Tema principal JS-->
+        < script  src =" {% static 'aplicacion/js/scripts.js' %} " > </ script >
+    </cuerpo> _ _
+</html> _ _
