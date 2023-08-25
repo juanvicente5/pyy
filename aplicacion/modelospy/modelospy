@@ -1,0 +1,22 @@
+de  Django . modelos de importación de bases de datos  
+#LOS TRES MODELOS USADOS PARA EL PROYECTO CON SUS RESPECTIVOS DATOS PARA LA BASE DE DATOS
+
+clase  Empleos ( modelos . Modelo ):
+    carga  =  modelos . CharField ( longitud_máxima = 50 )
+    detalles  =  modelos . Campo de texto ()
+    ubicacion  =  modelos . CharField ( longitud_máxima = 50 )
+    sueldo  =  modelos . CharField ( longitud_máxima = 50 )
+
+ Plan de estudios de la clase ( modelos . Modelo ):
+    nombre  =  modelos . CharField ( longitud_máxima = 50 )
+    apellido  =  modelos . CharField ( longitud_máxima = 50 )
+    presentación  =  modelos . Campo de texto ()
+    experiencia  =  modelos . Campo de texto ()
+    estudios  =  modelos . CharField ( longitud_máxima = 256 )
+
+clase  Empleador ( modelos . Modelo ):
+    nombre  =  modelos . CharField ( longitud_máxima = 50 )
+    apellido  =  modelos . CharField ( longitud_máxima = 50 )
+    profesión  =  modelos . CharField ( longitud_máxima = 50 )
+    edad  =  modelos . Campo entero ( max_length = 50 )
+    nombreEmpresa  =  modelos . CharField ( longitud_máxima = 50 )
