@@ -1,0 +1,13 @@
+Configuración ASGI para proyecto proyecto.
+Expone el ASGI invocable como una variable a nivel de módulo denominada ``aplicación``.
+Para obtener más información sobre este archivo, consulte
+https://docs.djangoproject.com/en/4.2/howto/deployment/asgi/
+"""
+
+importar  sistema operativo
+
+de  Django . núcleo . importación asgi  get_asgi_application 
+
+os . entorno . setdefault ( 'DJANGO_SETTINGS_MODULE' , 'proyecto.settings' )
+
+aplicación  =  get_asgi_application ()
