@@ -1,0 +1,122 @@
+"""
+Configuraciones de Django para proyecto proyecto.
+Generado por 'django-admin startproject' usando Django 4.2.3.
+Para obtener más información sobre este archivo, consulte
+https://docs.djangoproject.com/en/4.2/topics/settings/
+Para obtener la lista completa de configuraciones y sus valores, consulte
+https://docs.djangoproject.com/en/4.2/ref/settings/
+"""
+
+desde  pathlib  importar  ruta
+
+# Construya rutas dentro del proyecto de esta manera: BASE_DIR / 'subdir'.
+BASE_DIR  =  Ruta ( __archivo__ ). resolver (). padre . padre
+
+
+# Configuración de desarrollo de inicio rápido: no adecuada para producción
+# Ver https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
+
+# ADVERTENCIA DE SEGURIDAD: ¡mantenga en secreto la clave secreta utilizada en la producción!
+SECRET_KEY  =  'django-insecure-!!0l8*mg=va1p4@0)!q3!#tju@j@1k0g@p&c=mh3aw3q=n1l*$'
+
+# ADVERTENCIA DE SEGURIDAD: ¡no ejecute con la depuración activada en producción!
+DEPURACIÓN  =  Verdadero
+
+ALLOWED_HOSTS  = []
+
+
+# Definición de aplicación
+
+INSTALLED_APPS  = [
+    'django.contrib.admin' ,
+    'django.contrib.auth' ,
+    'django.contrib.contenttypes' ,
+    'django.contrib.sesiones' ,
+    'django.contrib.messages' ,
+    'django.contrib.archivos estáticos' ,
+    #
+    'aplicación'
+]
+
+MIDDLEWARE  = ​​[
+    'django.middleware.security.SecurityMiddleware' ,
+    'django.contrib.sessions.middleware.SessionMiddleware' ,
+    'django.middleware.common.CommonMiddleware' ,
+    'django.middleware.csrf.CsrfViewMiddleware' ,
+    'django.contrib.auth.middleware.AuthenticationMiddleware' ,
+    'django.contrib.messages.middleware.MessageMiddleware' ,
+    'django.middleware.clickjacking.XFrameOptionsMiddleware' ,
+]
+
+ROOT_URLCONF  =  'proyecto.urls'
+
+PLANTILLAS  = [
+    {
+        'BACKEND' : 'django.template.backends.django.DjangoTemplates' ,
+        'DIR' : [],
+        'APP_DIRS' : Verdadero ,
+        'OPCIONES' : {
+            'procesadores_contexto' : [
+                'django.template.context_processors.debug' ,
+                'django.template.context_processors.request' ,
+                'django.contrib.auth.context_processors.auth' ,
+                'django.contrib.messages.context_processors.messages' ,
+            ],
+        },
+    },
+]
+
+WSGI_APPLICATION  =  'proyecto.wsgi.aplicación'
+
+
+# Base de datos
+# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+
+BASES DE DATOS  = {
+    'predeterminado' : {
+        'MOTOR' : 'django.db.backends.sqlite3' ,
+        'NOMBRE' : BASE_DIR  /  'notas.db' ,
+    }
+}
+
+
+# Validación de contraseña
+# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
+
+AUTH_PASSWORD_VALIDATORS  = [
+    {
+        'NOMBRE' : 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator' ,
+    },
+    {
+        'NOMBRE' : 'django.contrib.auth.password_validation.MinimumLengthValidator' ,
+    },
+    {
+        'NOMBRE' : 'django.contrib.auth.password_validation.CommonPasswordValidator' ,
+    },
+    {
+        'NOMBRE' : 'django.contrib.auth.password_validation.NumericPasswordValidator' ,
+    },
+]
+
+
+# Internacionalización
+# https://docs.djangoproject.com/en/4.2/topics/i18n/
+
+LANGUAGE_CODE  =  'es'
+
+TIME_ZONE  =  'América/Argentina/Buenos_Aires'
+
+USE_I18N  =  Verdadero
+
+USE_TZ  =  Verdadero
+
+
+# Archivos estáticos (CSS, JavaScript, Imágenes)
+# https://docs.djangoproject.com/en/4.2/howto/static-files/
+
+STATIC_URL  =  'estático/'
+
+# Tipo de campo de clave principal predeterminado
+# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+
+DEFAULT_AUTO_FIELD  =  'django.db.models.BigAutoField'
