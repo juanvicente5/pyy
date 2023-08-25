@@ -1,0 +1,22 @@
+#!/usr/bin/env pitón
+"""Utilidad de línea de comandos de Django para tareas administrativas."""
+importar  sistema operativo
+ sistema de importación
+
+
+definición  principal ():
+    """Ejecutar tareas administrativas."""
+    os . entorno . setdefault ( 'DJANGO_SETTINGS_MODULE' , 'proyecto.settings' )
+    prueba :
+        de  Django . núcleo . gestión  de importación  ejecutar_desde_command_line
+    excepto  ImportError  como  exc :
+        aumentar  ImportError (
+            "No se pudo importar Django. ¿Estás seguro de que está instalado y"
+            "¿disponible en su variable de entorno PYTHONPATH? ¿Lo hizo?"
+            "¿Olvidaste activar un entorno virtual?"
+        ) de  exc
+    ejecutar_desde_línea_comando ( sys . argv )
+
+
+si  __nombre__  ==  '__principal__' :
+    principal ()
