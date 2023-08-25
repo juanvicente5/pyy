@@ -1,0 +1,40 @@
+{% extiende 'aplicacion/base.html' %}
+<!-- SE RELENAN LOS BLOQUES CON LO QUE SE QUIERE MOSTRAR-->
+{% título del bloque %}
+    < div  class =" centro de texto mb-5 " >
+        < h1  class =" display-5 fw-bolder mb-0 " > < span  class =" text-gradient d-inline " > Bienvenidos a TrabajoYa </ span > </ h1 >
+    </div> _ _                              
+{% título del bloque final %}
+
+{% bloquear informacion %}
+
+    < div  class =" centro de texto " >
+        < div  class =" fs-3 fw-light text-muted " > El sitio ideal para buscar tu primer empleo </ div >
+        < h1  class =" display-3 fw-bolder mb-5 " > < span  class =" text-gradient d-inline " > Comience Ya mismo en su busqueda </ span > </ h1 >
+        < div  class =" d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3 " > </ div >
+    </div> _ _
+
+{% información del bloque final %}
+
+{% bloque final %}
+    < sección  clase =" bg-light py-5 " >
+        < div  clase =" contenedor px-5 " >
+            < div  class =" fila gx-5 justify-content-center " >
+                < div  clase =" col-xxl-8 " >
+                    < div  class =" centro de texto my-5 " >
+                        < h2  class =" display-5 fw-bolder " > < span  class =" text-gradient d-inline " > Trabajo Ya </ span > </ h2 >
+                        < p  class =" lead fw-light mb-4 " > ofrecemos una gran comunidad en busca de empleo y trabajadores </ p >
+                        < p  class =" text-muted " > El sitio web numero 1 en todo el mundo para buscar o publicar tu empleo </ p >
+                        < div  class =" d-flex justify-content-center fs-2 gap-4 " >
+                            < a  class =" text-gradient " href =" #! " > < i  class =" bi bi-twitter " > </ i > </ a >
+                            < a  class =" text-gradient " href =" #! " > < i  class =" bi bi-linkedin " > </ i > </ a >
+                            < a  class =" text-gradient " href =" #! " > < i  class =" bi bi-github " > </ i > </ a >
+                        </div> _ _
+                    </div> _ _
+                </div> _ _
+            </div> _ _
+        </div> _ _
+    </ sección >
+    </principal> _ _
+
+{% bloque final %}
