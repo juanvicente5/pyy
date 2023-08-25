@@ -1,0 +1,24 @@
+{% extiende 'aplicacion/base.html' %}
+
+{% título del bloque %}
+    < div  class =" centro de texto mb-5 " >
+        < h1  class =" display-5 fw-bolder mb-0 " > < span  class =" text-gradient d-inline " > {{trabajo.cargo}} </ span > </ h1 >
+    </div> _ _                              
+{% título del bloque final %}
+
+{% bloquear informacion %}
+    {% si trabajo %}
+        < div  class =" desbordamiento de tarjeta-sombra oculta redondeada-4 borde-0 mb-5 " >
+            < div  class =" cuerpo de tarjeta p-0 " >
+                < div  class =" d-flex align-items-center " >
+                    < div  clase =" p-5 " >
+                        < h2  class = " fw-bolder " > {{ trabajo.ubicacion }} </h2>
+                        < h4  class =" fw-bolder " > { { trabajo.sueldo}} </h4>
+                        < p > {{trabajo.detalles}} </ p >
+                    </div> _ _
+                </div> _ _
+
+    {% demás %}
+        < p > No se ha encontrado a nadie con ese nombre. </ p >
+    {% terminara si %}
+{% información del bloque final %}
