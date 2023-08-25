@@ -1,0 +1,53 @@
+{% extiende 'aplicacion/base.html' %}
+
+{% título del bloque %}
+    < div  class =" centro de texto mb-5 " >
+        < h1  class =" display-5 fw-bolder mb-0 " > < span  class =" text-gradient d-inline " > Lista de Empleados </ span > </ h1 >
+    </div> _ _                              
+{% título del bloque final %}
+
+{% bloquear filtro %}
+< formulario  action =" {%url 'lista_empleos' %} " método =" GET " class =" text-center " >
+    < tipo de entrada  =" texto " nombre =" carga " marcador de posición =" Buscar por carga " clase =" mx-auto p-2 " estilo =" ancho: 490px; " >
+    < tipo de botón  =" enviar " clase =" btn btn-primary btn-lg mx-auto p-2 " estilo =" ancho: 100px; " > Buscar </ botón >
+</ formulario >
+{% filtro de bloque final %}
+
+{% bloquear informacion %}
+        < sección  clase =" py-5 " > 
+            < div  class =" fila gx-5 justify-content-center " >
+                < div  clase =" col-lg-8 col-xl-6 " >
+                    < clase de tabla  =" tabla " >
+                        < cabeza >
+                            < tr >
+                                < th  class =" text-center " > Apellido </ th >
+                                < th  class =" text-center " > Nombre </ th >
+                                < th  class =" text-center " > Acciones </ th >
+                            </tr> _ _
+                        </ cabeza >
+                        < cuerpo >
+                            {% para currículo en currículos %}
+                                < tr >
+                                    < td  class =" centro-texto " > {{ curriculum.apellido }} </ td >
+                                    < td  class =" text-center " > {{ curriculum.nombre }} </ td >
+                                    < td  class =" centro de texto " >
+                                        < a  href =" {%url 'detalle_empleado' curriculum.id %} " class =" btn btn-primary " >
+                                            < i  class =" bi bi-plus-lg " > </ i >
+                                        </a> _ _
+                                    </td> _ _
+                                </tr> _ _
+                            {% final de %}
+                        </ tcuerpo >
+                    </ mesa >
+                </div> _ _
+            </div> _ _
+        </ sección >
+
+{% información del bloque final %}
+
+
+{% bloque final %}
+
+    < a  href =" {% url 'empleadoForm' %} "   class = " btn btn-primary btn-lg opacity-95 mx-auto p-2 " style =" width: 200px; " > Llenar formulario de empleado </ a >
+
+{% bloque final %}
